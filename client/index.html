@@ -1,5 +1,6 @@
 <html>
-    <head><style type="text/css">
+    <head>   
+        <style type="text/css">
         .centerImage
         {
          text-align:center;
@@ -8,8 +9,29 @@
         </style></head>
     <body>
         <h1 style="text-align: center;"> Goku powers up!</h1>
-        <img class="centerImage" src="../resources/goku_base_form.webp"style="height:400px;width:400px"></img>
-        <button style="height:70px;width:200px">Power UP!</button>
-        <button style="height:70px;width:200px">Power DOWN!</button>
+        <img id="myimage" class="centerImage" src="../resources/goku_base_form.webp"style="height:800px;width:400px"></img>
+        <button id="1" onclick="changeimage()" style="height:70px;width:200px">Power UP!</button>
+        <button id="2" style="height:70px;width:200px">Power DOWN!</button>
     </body>
+    <script>
+        var test=1;
+        var ele = document.getElementById('1');
+        ele.innerHTML="Power UP!"
+        function changeimage(){
+            var image = document.getElementById("myimage");      
+            console.log(">>", image)
+            if (image.src.match("../resources/goku_base_form.webp")) {
+                image.src = "../resources/goku_super_saiyan_1.webp";
+                console.log("if 1", image) 
+            } else if (image.src.match("../resources/goku_super_saiyan_1.webp")) {
+                image.src = "../resources/goku_super_saiyan_2.png";
+                console.log("if 2", image) 
+            } else if (image.src.match("../resources/goku_super_saiyan_2.png")) {
+                image.src = "../resources/goku_super_saiyan_3.jpg";
+                console.log("if 3", image)
+            }
+        }
+
+    </script>
+
 </html>
